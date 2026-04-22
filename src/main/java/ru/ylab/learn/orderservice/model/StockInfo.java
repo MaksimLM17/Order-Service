@@ -4,10 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Внутренняя модель Order-Service.
- * Сюда мы маппим данные и из gRPC (Protobuf), и из REST (Feign).
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

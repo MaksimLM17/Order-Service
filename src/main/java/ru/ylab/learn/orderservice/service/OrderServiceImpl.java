@@ -22,7 +22,7 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
     private final WarehouseClient warehouseClient;
-    private final OrderMapper orderMapper; // Маппер переехал сюда
+    private final OrderMapper orderMapper;
 
     private final AtomicInteger counter = new AtomicInteger(1);
 
@@ -36,7 +36,6 @@ public class OrderServiceImpl implements OrderService {
         order.setQuantity(quantity);
 
         try {
-            // gRPC или REST вызов через абстракцию клиента
             warehouseClient.reserveStock(productId, quantity);
             order.setStatus(Status.CONFIRMED);
             log.info("Сервис: Резерв подтвержден для заказа №{}", order.getOrderId());

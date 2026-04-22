@@ -1,9 +1,6 @@
 server:
   port: 8082
 
-warehouse:
-  client:
-    type: grpc
 grpc:
   client:
     warehouse-service:
